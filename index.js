@@ -1,14 +1,16 @@
 const fs = require("fs");
 const { parse } = require("csv-parse");
-const { GetSortOrder } = require("./utils/helpers");
+const { GetSortOrder, writeResult } = require("./utils/helpers");
 
 try {
   const parser = parse({ columns: true }, function (err, records) {
-    // console.log(records);
+    // sorting the returned objects
     const result = records.sort(
       GetSortOrder("Road deaths per million inhabitants")
     );
-    console.log(result);
+    const newResult = JSON.stringify(result);
+    // console.log(result);
+    writeResult("resultData.js", newResult);
   });
   fs.createReadStream(__dirname + "/road-safety-data.csv").pipe(parser);
 } catch (error) {
