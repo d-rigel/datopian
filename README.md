@@ -1,7 +1,5 @@
 ## Node CSV read and write file App
 
----
-
 Node.js App that reads csv file and return back a sorted result
 
 ### Version
@@ -9,8 +7,6 @@ Node.js App that reads csv file and return back a sorted result
 1.0.0
 
 ## Usage
-
----
 
 ## Installation
 
